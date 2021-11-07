@@ -41,32 +41,56 @@ void setup()
 
   ESP32Can.CANInit(); // Init CAN Module.  初始化Can
 }
+uint16_t count = 0;
+void sendCanMessage()
+{
+  CAN_frame_t rx_frame;
+  rx_frame.FIR.B.FF = CAN_frame_std;
+  rx_frame.MsgID = 100;
+  rx_frame.FIR.B.DLC = 1;
+  rx_frame.data.u8[0] = count++;
+  if (count >= 255)
+  {
+    count = 0;
+  }
+
+  ESP32Can.CANWriteFrame(&rx_frame);
+  M5.Lcd.println(count);
+  printf("count %d", count);
+          printf("\n");
+}
+long timeCount = 0;
 
 void loop()
 {
+  if (millis() - timeCount > 1000)
+  {
+    sendCanMessage();
+    timeCount = millis();
+  }
   CAN_frame_t rx_frame;
 
-  if (M5.BtnA.wasPressed())
-  {
-    rx_frame.FIR.B.FF = CAN_frame_std;
-    rx_frame.MsgID = 100;
-    rx_frame.FIR.B.DLC = 1;
-    rx_frame.data.u8[0] = 15;
+  // if (M5.BtnA.wasPressed())
+  // {
+  //   rx_frame.FIR.B.FF = CAN_frame_std;
+  //   rx_frame.MsgID = 100;
+  //   rx_frame.FIR.B.DLC = 1;
+  //   rx_frame.data.u8[0] = 15;
 
-    ESP32Can.CANWriteFrame(&rx_frame);
-    M5.Lcd.println("Send Message1");
-  }
-  if (M5.BtnB.wasPressed())
-  {
-    rx_frame.FIR.B.FF = CAN_frame_std;
-    rx_frame.MsgID = 100;
-    rx_frame.FIR.B.DLC = 1;
-    rx_frame.data.u8[0] = 'M';
+  //   ESP32Can.CANWriteFrame(&rx_frame);
+  //   M5.Lcd.println("Send Message1");
+  // }
+  // if (M5.BtnB.wasPressed())
+  // {
+  //   rx_frame.FIR.B.FF = CAN_frame_std;
+  //   rx_frame.MsgID = 100;
+  //   rx_frame.FIR.B.DLC = 1;
+  //   rx_frame.data.u8[0] = 'M';
 
-    ESP32Can.CANWriteFrame(&rx_frame);
-    M5.Lcd.println("Send Message2");
-    Serial.println("B");
-  }
+  //   ESP32Can.CANWriteFrame(&rx_frame);
+  //   M5.Lcd.println("Send Message2");
+  //   Serial.println("B");
+  // }
 
   if (xQueueReceive(CAN_cfg.rx_queue, &rx_frame, 3 * portTICK_PERIOD_MS) == pdTRUE)
   {
@@ -97,7 +121,7 @@ void loop()
           if (treeCount < 10)
           {
             // M5.Lcd.drawFillRect(100,0,130,90,GREEN);
-            M5.Lcd.fillRect(100,0,130,90,BLACK);
+            M5.Lcd.fillRect(100, 0, 130, 90, BLACK);
             M5.Lcd.drawString(String(treeCount), 140, 3, 8);
           }
           else
