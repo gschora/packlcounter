@@ -1,0 +1,219 @@
+;Configuration file for data types in miCon-L
+
+;General settings
+[GENERAL]
+REORGMEM          =TRUE
+DLGDLL            =ISTDSIGDLG.DLL
+FILEDLG           =CallFileDlg
+DEFAULTVIEWDLG    =CallViewDlg
+SENDMSGTIMEOUT    =100
+GLOBVARACCESS     =CSVVARLIST.DLL
+
+;Enable or disable warnings
+[WARNINGS]
+UNUSED VAR=N
+READ BUT NOT WRITTEN VAR=N
+MULTIPLE WRITTEN VAR=N
+
+;List of defined data types
+[LIST]
+1="BIT/BYTES",1,10
+2="WORD",5,9
+3="LONG",6,11
+4="FLOAT",4,8
+5="UCHAR",28,29
+6="FLOWCTRL",361
+
+;Definition of a data type
+[1]
+NAME       =M
+SUBELEM    =8
+DLGDLL     =ISTDSIGDLG.DLL
+ONLVISDLG  =CallOnlineShowBitDlg
+ONLEDITDLG =CallOnlineEditBitDlg
+LCOLOR     =0,0,0
+LSTYLE     =SOLID
+LWIDTH     =1
+SIZE       =5
+
+;Definition of a data type
+[10]
+NAME       =B
+SUBELEM    =8
+DLGDLL     =ISTDSIGDLG.DLL
+PARADLG    =CallParaBitDlg
+ONLVISDLG  =CallOnlineShowBitDlg
+ONLEDITDLG =CallOnlineEditBitDlg
+MGMTDLL    =ISTDINPPARA.DLL
+MGMTFUNC   =GetParaMGMTFunc
+INPPARADLL =ISTDINPPARA.DLL
+INPPARAFUNC=GetStdParaFctns
+LCOLOR     =0,0,0
+LSTYLE     =SOLID
+LWIDTH     =1
+SIZE       =5
+
+;Definition of a data type
+[5]
+NAME       =DW
+DLGDLL     =ISTDSIGDLG.DLL
+ONLVISDLG  =CallOnlineShowWordDlg
+ONLEDITDLG =CallOnlineEditWordDlg
+LCOLOR     =0,128,128
+LSTYLE     =SOLID
+LWIDTH     =1
+SIZE       =4
+
+;Definition of a data type
+[9]
+NAME       =PW
+DLGDLL     =ISTDSIGDLG.DLL
+PARADLG    =CallParaWordDlg
+ONLVISDLG  =CallOnlineShowWordDlg
+ONLEDITDLG =CallOnlineEditWordDlg
+MGMTDLL    =ISTDINPPARA.DLL
+MGMTFUNC   =GetParaMGMTFunc
+INPPARADLL =ISTDINPPARA.DLL
+INPPARAFUNC=GetStdParaFctns
+LCOLOR     =0,128,128
+LSTYLE     =SOLID
+LWIDTH     =1
+SIZE       =4
+
+;Definition of a data type
+[6]
+NAME       =DL
+DLGDLL     =ISTDSIGDLG.DLL
+ONLVISDLG  =CallOnlineShowLongDlg
+ONLEDITDLG =CallOnlineEditLongDlg
+LCOLOR     =255,0,255
+LSTYLE     =SOLID
+LWIDTH     =1
+SIZE       =6
+
+;Definition of a data type
+[11]
+NAME       =PL
+DLGDLL     =ISTDSIGDLG.DLL
+PARADLG    =CallParaLongDlg
+ONLVISDLG  =CallOnlineShowLongDlg
+ONLEDITDLG =CallOnlineEditLongDlg
+MGMTDLL    =ISTDINPPARA.DLL
+MGMTFUNC   =GetParaMGMTFunc
+INPPARADLL =ISTDINPPARA.DLL
+INPPARAFUNC=GetStdParaFctns
+LCOLOR     =255,0,255
+LSTYLE     =SOLID
+LWIDTH     =1
+SIZE       =6
+
+;Definition of a data type
+[4]
+NAME       =DF
+DLGDLL     =ISTDSIGDLG.DLL
+ONLVISDLG  =CallOnlineShowFloatDlg
+ONLEDITDLG =CallOnlineEditFloatDlg
+LCOLOR     =0,0,255
+LSTYLE     =SOLID
+LWIDTH     =1
+SIZE       =3
+
+;Definition of a data type
+[8]
+NAME       =PF
+DLGDLL     =ISTDSIGDLG.DLL
+PARADLG    =CallParaFloatDlg
+ONLVISDLG  =CallOnlineShowFloatDlg
+ONLEDITDLG =CallOnlineEditFloatDlg
+MGMTDLL    =ISTDINPPARA.DLL
+MGMTFUNC   =GetParaMGMTFunc
+INPPARADLL =ISTDINPPARA.DLL
+INPPARAFUNC=GetStdParaFctns
+LCOLOR     =0,0,255
+LSTYLE     =SOLID
+LWIDTH     =1
+SIZE       =3
+
+;Definition of a data type
+[28]
+NAME       =UCHARDATA
+DLGDLL     =ISTDSIGDLG.DLL
+ONLVISDLG  =CallOnlineShowUCHARDlg
+ONLEDITDLG =CallOnlineEditUCHARDlg
+LCOLOR     =0,255,255
+LSTYLE     =SOLID
+LWIDTH     =1
+
+;Definition of a data type
+[29]
+NAME       =UCHARPARA
+DLGDLL     =ISTDSIGDLG.DLL
+ONLVISDLG  =CallOnlineShowUCHARDlg
+ONLEDITDLG =CallOnlineEditUCHARDlg
+MGMTDLL    =ISTDINPPARA.DLL
+MGMTFUNC   =GetParaMGMTFunc
+INPPARADLL =ISTDINPPARA.DLL
+INPPARAFUNC=GetStdParaFctns
+LCOLOR     =0,255,255
+LSTYLE     =SOLID
+LWIDTH     =1
+
+;Definition of data type
+[361]
+NAME       =FLOWCTRL
+LCOLOR     =64,64,0
+LSTYLE     =SOLID
+LWIDTH     =2
+TYPE       =MULTIPLE_INPUTS|INVERSEDIRECTION|CONTROLFLOW
+
+;Definition of data type
+[364]
+NAME       =FLCTRLTAB
+LCOLOR     =64,64,0
+LSTYLE     =SOLID
+LWIDTH     =1
+TYPE       =MULTIPLE_INPUTS|INVERSEDIRECTION
+ELEMSIZE   =28
+FCWATCHDOG =1000
+
+;Remanent memory management for STG-500 (miCon-L)
+[4231]
+NAME       =STGREMAN
+LCOLOR     =64,0,128
+LSTYLE     =SOLID
+LWIDTH     =1
+TYPE       =NO_TMI
+
+;count CAN-RX
+[10001]
+NAME       =MEMIDSTGCANRX
+LCOLOR     =64,0,128
+LSTYLE     =SOLID
+LWIDTH     =1
+TYPE       =NO_TMI
+
+;count CAN-TX
+[10002]
+NAME       =MEMIDSTGCANTX
+LCOLOR     =64,0,128
+LSTYLE     =SOLID
+LWIDTH     =1
+TYPE       =NO_TMI
+
+;count CAN-STAT
+[10003]
+NAME       =MEMIDSTGCANST
+LCOLOR     =64,0,128
+LSTYLE     =SOLID
+LWIDTH     =1
+TYPE       =NO_TMI
+
+[11100]
+NAME       =DIAGTIMEDATA
+DLGDLL     =ISTDSIGDLG.DLL
+ONLVISDLG  =CallOnlineShowLongDlg
+ONLEDITDLG =CallOnlineEditLongDlg
+LCOLOR     =255,0,255
+LSTYLE     =SOLID
+LWIDTH     =1
+SIZE       =6

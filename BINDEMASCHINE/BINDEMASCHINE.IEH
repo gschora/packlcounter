@@ -1,0 +1,41 @@
+[GLOBAL]
+TRACE=Y
+SYSTRACE=N
+TOSAVE=IWS;IEH;DEVID
+SAVESUBDIR=COMM
+COPYDIRONBACKANNO=Y
+
+BEFORECREATEZCD=1
+AFTERCREATEZCD=1
+ONLOADPROJECT=1
+ONCLOSEPROJECT=2
+
+[BEFORECREATEZCD1]
+description=before the intermediate code generation
+dir=LIB\CANLayer2A
+tool=L2CANArmFunctions.dll
+func=L2CANArm_BeforeCreateZCD
+
+[AFTERCREATEZCD1]
+description=after the intermediate code generation
+dir=LIB\CANLayer2A
+tool=L2CANArmFunctions.dll
+func=L2CANArm_AfterCreateZCD
+
+[ONLOADPROJECT1]
+description=on load project
+dir=LIB\SYSDIAGA
+tool=GenericSysFnct.dll
+func=GenSys_OnLoadProject
+
+[ONCLOSEPROJECT1]
+description=on close project
+dir=LIB\CANLayer2A
+tool=L2CANArmFunctions.dll
+func=L2CANArm_OnCloseProject
+
+[ONCLOSEPROJECT2]
+description=on close project
+dir=LIB\SYSDIAGA
+tool=GenericSysFnct.dll
+func=GenSys_OnCloseProject
