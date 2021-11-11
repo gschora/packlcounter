@@ -1,0 +1,147 @@
+99     miCon-L_Copyright_ProSign_2012
+98     Version_1.000
+97     Project: D:\GITPROJECTS_MINE\2021\PACKLCOUNT\PACKLCOUNT_STG850\PACKLCOUNT_STG850.MDL
+ 2 List of E
+ 3 List of A
+10 List of B
+ 0 B             8 N : Reset
+                   D : 0
+                   C : %%
+ 0 B             9 N : Reset@Counter
+                   D : 0
+                   C : %%
+ 0 B            10 N : +
+                   D : 0
+                   C : %%
+ 0 B            11 N : +
+                   D : 0
+                   C : %%
+ 0 B            12 N : -
+                   D : 0
+                   C : %%
+ 0 B            13 N : send
+                   D : 0
+                   C : %%
+ 0 B            14 N : Packl@START
+                   D : 0
+                   C : %%
+ 0 B            15 N : Reset@Counter
+                   D : 0
+                   C : %%
+ 0 B            16 N : Packl@STOP
+                   D : 0
+                   C : %%
+29 List of UCHARPARA
+ 9 List of PW
+ 0 PW            1 N : %%
+                   D : undef
+                   C : %%
+ 0 PW            2 N : %%
+                   D : undef
+                   C : %%
+ 0 PW            3 N : %%
+                   D : undef
+                   C : %%
+ 0 PW            4 N : %%
+                   D : undef
+                   C : %%
+ 0 PW            5 N : %%
+                   D : undef
+                   C : %%
+ 0 PW            6 N : %%
+                   D : undef
+                   C : %%
+ 0 PW            7 N : %%
+                   D : undef
+                   C : %%
+ 0 PW            8 N : %%
+                   D : undef
+                   C : %%
+ 0 PW            9 N : %%
+                   D : undef
+                   C : %%
+ 0 PW           10 N : %%
+                   D : undef
+                   C : %%
+ 0 PW           11 N : %%
+                   D : undef
+                   C : %%
+ 0 PW           12 N : %%
+                   D : undef
+                   C : %%
+ 0 PW           13 N : %%
+                   D : undef
+                   C : %%
+ 0 PW           14 N : %%
+                   D : undef
+                   C : %%
+ 0 PW           15 N : %%
+                   D : undef
+                   C : %%
+ 0 PW           16 N : %%
+                   D : undef
+                   C : %%
+11 List of PL
+31 List of INT64PARA
+ 8 List of PF
+ 0 PF            1 N : %%
+                   D : undef
+                   C : %%
+ 0 PF            2 N : %%
+                   D : undef
+                   C : %%
+ 0 PF            3 N : %%
+                   D : undef
+                   C : %%
+ 0 PF            4 N : %%
+                   D : undef
+                   C : %%
+ 0 PF            5 N : %%
+                   D : undef
+                   C : %%
+ 0 PF            6 N : %%
+                   D : undef
+                   C : %%
+ 0 PF            7 N : %%
+                   D : undef
+                   C : %%
+ 0 PF            8 N : %%
+                   D : undef
+                   C : %%
+ 0 PF            9 N : %%
+                   D : undef
+                   C : %%
+ 0 PF           10 N : %%
+                   D : undef
+                   C : %%
+ 0 PF           11 N : %%
+                   D : undef
+                   C : %%
+ 0 PF           12 N : %%
+                   D : undef
+                   C : %%
+ 0 PF           13 N : %%
+                   D : undef
+                   C : %%
+ 0 PF           14 N : %%
+                   D : undef
+                   C : %%
+ 0 PF           15 N : %%
+                   D : undef
+                   C : %%
+ 0 PF           16 N : %%
+                   D : undef
+                   C : %%
+ 0 PF           17 N : %%
+                   D : undef
+                   C : %%
+ 0 PF           18 N : %%
+                   D : undef
+                   C : %%
+33 List of DOUBLEPARA
+12 List of PT
+21 List of TIMEPARA
+23 List of DATEPARA
+25 List of TODPARA
+27 List of DTPARA
+35 List of OLEDTPARA

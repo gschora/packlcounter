@@ -4,6 +4,15 @@
  2 List of E
  3 List of A
 10 List of B
+ 0 B             8 N : %%
+                   D : 0
+                   C : %%
+ 0 B             9 N : %%
+                   D : 0
+                   C : %%
+ 0 B            10 N : %%
+                   D : 0
+                   C : %%
 29 List of UCHARPARA
  9 List of PW
 11 List of PL
@@ -34,6 +43,18 @@
                    D : undef
                    C : %%
  0 PF            9 N : %%
+                   D : undef
+                   C : %%
+ 0 PF           10 N : %%
+                   D : undef
+                   C : %%
+ 0 PF           11 N : %%
+                   D : undef
+                   C : %%
+ 0 PF           12 N : %%
+                   D : undef
+                   C : %%
+ 0 PF           13 N : %%
                    D : undef
                    C : %%
 33 List of DOUBLEPARA
